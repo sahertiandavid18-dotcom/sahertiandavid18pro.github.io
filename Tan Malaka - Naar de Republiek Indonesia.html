@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naar de 'Republiek Indonesia' (1925) - Tan Malaka</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display, Cinzel, Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#8B0000',
+                            crimson: '#991B1B',
+                            darkRed: '#4A0404',
+                            gold: '#D4AF37',
+                            goldLight: '#F3E5AB',
+                            parchment: '#FDFBF7',
+                            parchmentDark: '#F4EAD5',
+                            charcoal: '#121212',
+                            cardDark: '#1A1818',
+                            borderGold: '#8C733E'
+                        }
+                    },
+                    fontFamily: {
+                        cinzel: ['Cinzel', 'serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .parchment-bg {
+            background-color: #121212;
+            background-image: radial-gradient(#261818 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF0BD 0%, #D4AF37 50%, #AA7C11 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border-glow {
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        .gold-border-glow:hover {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.35);
+            border-color: rgba(212, 175, 55, 0.6);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #121212;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4A0404;
+            border-radius: 4px;
+            border: 1px solid #D4AF37;
+        }
+    </style>
+</head>
+<body class="bg-brand-charcoal text-gray-200 font-sans selection:bg-brand-red selection:text-brand-goldLight parchment-bg">
+
+    <!-- Top Identity Banner -->
+    <div class="bg-gradient-to-r from-brand-darkRed via-black to-brand-darkRed border-b border-brand-gold/40 text-center py-2 px-4 shadow-inner relative z-50">
+        <div class="max-w-7xl mx-auto flex items-center justify-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
+            <span class="font-cinzel text-xs sm:text-sm font-bold tracking-widest text-brand-goldLight uppercase">
+                <i class="fa-solid fa-feather-pointed mr-1 text-brand-gold"></i> Karya & Presentasi Oleh: <span class="text-brand-gold underline underline-offset-4 decoration-brand-gold/50">David XI-2/5</span>
+            </span>
+            <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="fixed top-8 left-0 right-0 z-40 bg-brand-charcoal/90 backdrop-blur-md border-b border-brand-gold/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-full border border-brand-gold flex items-center justify-center bg-brand-darkRed shadow-md">
+                    <span class="font-cinzel text-brand-gold font-bold text-lg">TM</span>
+                </div>
+                <div>
+                    <a href="#" class="font-cinzel text-lg sm:text-xl font-bold tracking-wider text-brand-goldLight hover:text-brand-gold transition">
+                        TAN MALAKA <span class="text-xs text-brand-gold block font-sans font-normal tracking-widest">1925 • CANTON</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-wide">
+                <a href="#about" class="text-gray-300 hover:text-brand-gold transition flex items-center gap-2"><i class="fa-solid fa-book-bookmark text-xs text-brand-gold">title</i> Konsep Utama</a>
+                <a href="#gallery" class="text-gray-300 hover:text-brand-gold transition flex items-center gap-2"><i class="fa-solid fa-image text-xs text-brand-gold"></i> Tokoh & Foto</a>
+                <a href="#timeline" class="text-gray-300 hover:text-brand-gold transition flex items-center gap-2"><i class="fa-solid fa-timeline text-xs text-brand-gold"></i> Garis Waktu</a>
+                <a href="#explorer" class="text-gray-300 hover:text-brand-gold transition flex items-center gap-2"><i class="fa-solid fa-compass text-xs text-brand-gold"></i> Isi Pamflet</a>
+                <a href="#quiz" class="text-gray-300 hover:text-brand-gold transition flex items-center gap-2"><i class="fa-solid fa-graduation-cap text-xs text-brand-gold"></i> Kuis Sejarah</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobileMenuBtn" class="md:hidden text-brand-gold p-2 rounded-lg hover:bg-brand-darkRed/40 transition">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobileMenu" class="hidden md:hidden bg-brand-cardDark border-b border-brand-gold/30 px-6 py-4 space-y-3">
+            <a href="#about" class="block text-gray-200 hover:text-brand-gold py-2"><i class="fa-solid fa-book-bookmark mr-2 text-brand-gold"></i> Konsep Utama</a>
+            <a href="#gallery" class="block text-gray-200 hover:text-brand-gold py-2"><i class="fa-solid fa-image mr-2 text-brand-gold"></i> Tokoh & Foto</a>
+            <a href="#timeline" class="block text-gray-200 hover:text-brand-gold py-2"><i class="fa-solid fa-timeline mr-2 text-brand-gold"></i> Garis Waktu</a>
+            <a href="#explorer" class="block text-gray-200 hover:text-brand-gold py-2"><i class="fa-solid fa-compass mr-2 text-brand-gold"></i> Isi Pamflet</a>
+            <a href="#quiz" class="block text-gray-200 hover:text-brand-gold py-2"><i class="fa-solid fa-graduation-cap mr-2 text-brand-gold"></i> Kuis Sejarah</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-40 pb-20 md:pt-52 md:pb-32 overflow-hidden border-b border-brand-gold/20">
+        <!-- Background Vignette Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-darkRed/30 via-brand-charcoal/80 to-brand-charcoal pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-darkRed/60 border border-brand-gold/40 text-brand-gold text-xs sm:text-sm font-semibold mb-6 tracking-widest uppercase">
+                <i class="fa-solid fa-scroll"></i> Karya Masterpiece Pengasingan 1925
+            </div>
+
+            <h1 class="font-cinzel text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 leading-tight">
+                <span class="text-white">Naar de</span> <span class="gold-gradient-text">'Republiek Indonesia'</span>
+            </h1>
+            <p class="font-serif italic text-xl sm:text-2xl text-brand-goldLight/90 max-w-3xl mx-auto mb-6">
+                "Menuju Republik Indonesia" — Cetakan Biru Pertama Berdirinya Bangsa Indonesia
+            </p>
+
+            <p class="text-gray-300 max-w-2xl mx-auto text-base sm:text-lg mb-10 leading-relaxed font-light">
+                Ditulis oleh <strong class="text-brand-gold font-semibold">Tan Malaka</strong> dalam pengasingan di Canton (Guangzhou), China pada tahun 1925. Karya historis ini secara eksplisit mencetuskan konsep negara berdaulat berbentuk **Republik**, jauh sebelum Sumpah Pemuda 1928 dan Proklamasi 1945.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#about" class="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-gradient-to-r from-brand-crimson to-brand-darkRed border border-brand-gold text-brand-goldLight font-semibold text-sm tracking-wider uppercase hover:scale-105 transition duration-300 shadow-lg flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-book-open"></i> Jelajahi Gagasan
+                </a>
+                <a href="#gallery" class="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-brand-cardDark/80 border border-brand-gold/30 text-gray-300 font-semibold text-sm tracking-wider uppercase hover:border-brand-gold hover:text-brand-gold transition duration-300 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-user-ninja"></i> Potret Tan Malaka
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Concepts & Significance Grid -->
+    <section id="about" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-brand-gold mb-3">
+                    <i class="fa-solid fa-shield-halved mr-2 text-brand-crimson"></i> Pilar Utama Pamflet
+                </h2>
+                <div class="w-24 h-1 bg-brand-gold mx-auto mb-4 rounded-full"></div>
+                <p class="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
+                    Empat konsep sentral yang membedakan gagasan Tan Malaka dari gerakan pergerakan nasional sezamannya.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-brand-cardDark/90 rounded-xl p-6 gold-border-glow transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-lg bg-brand-darkRed/80 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xl mb-5 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-crown"></i>
+                        </div>
+                        <h3 class="font-cinzel text-lg font-bold text-brand-goldLight mb-3">Cetakan Biru Republik Pertama</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                            Karya tertulis paling awal yang secara tegas merumuskan Indonesia sebagai <strong>Republik Berdaulat</strong>, bukan pemulihan kerajaan kuno atau koloni yang diberi otonomi terbatas.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-brand-gold/10 text-xs text-brand-gold flex items-center gap-1 font-semibold">
+                        <i class="fa-solid fa-star"></i> Mendahului 1928 & 1945
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-brand-cardDark/90 rounded-xl p-6 gold-border-glow transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-lg bg-brand-darkRed/80 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xl mb-5 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-earth-asia"></i>
+                        </div>
+                        <h3 class="font-cinzel text-lg font-bold text-brand-goldLight mb-3">Asal & Masa Pengasingan</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                            Ditulis dalam situasi persembunyian yang keras saat berada di pelarian politik dan diterbitkan di <strong>Canton (Guangzhou), China (1925)</strong> untuk diselundupkan ke Hindia Belanda.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-brand-gold/10 text-xs text-brand-gold flex items-center gap-1 font-semibold">
+                        <i class="fa-solid fa-map-pin"></i> Guangzhou / Canton, 1925
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-brand-cardDark/90 rounded-xl p-6 gold-border-glow transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-lg bg-brand-darkRed/80 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xl mb-5 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-wheat-awn-circle-exclamation"></i>
+                        </div>
+                        <h3 class="font-cinzel text-lg font-bold text-brand-goldLight mb-3">Kritik Ekonomi Kolonial</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                            Analisis tajam mengenai eksploitasi kapitalisme imperialis Belanda, kemiskinan tanah, dan penindasan yang dialami oleh kaum buruh serta petani miskin.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-brand-gold/10 text-xs text-brand-gold flex items-center gap-1 font-semibold">
+                        <i class="fa-solid fa-chart-line"></i> Pembebasan Kaum Tani & Buruh
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-brand-cardDark/90 rounded-xl p-6 gold-border-glow transition-all duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="w-12 h-12 rounded-lg bg-brand-darkRed/80 border border-brand-gold/40 flex items-center justify-center text-brand-gold text-xl mb-5 group-hover:scale-110 transition">
+                            <i class="fa-solid fa-building-columns"></i>
+                        </div>
+                        <h3 class="font-cinzel text-lg font-bold text-brand-goldLight mb-3">Program Politik Radikal</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                            Penghapusan penuh kekuasaan kolonial, hak politik setara bagi pria dan wanita, nasionalisasi bank & industri vital, serta pembentukan **Majelis Permusyawaratan Nasional**.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-brand-gold/10 text-xs text-brand-gold flex items-center gap-1 font-semibold">
+                        <i class="fa-solid fa-scale-balanced"></i> Majelis Permusyawaratan
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tokoh & Image Gallery Section -->
+    <section id="gallery" class="py-20 bg-brand-cardDark/50 border-y border-brand-gold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-brand-gold mb-3">
+                    <i class="fa-solid fa-portrait mr-2 text-brand-crimson"></i> Tokoh Di Balik Gagasan
+                </h2>
+                <div class="w-24 h-1 bg-brand-gold mx-auto mb-4 rounded-full"></div>
+                <p class="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
+                    Potret Tan Malaka pada masa-masa perjuangan pergerakan dan pengasingannya.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+                <!-- Image Card 1 -->
+                <div class="bg-brand-cardDark rounded-2xl p-6 border border-brand-gold/30 shadow-2xl hover:border-brand-gold transition duration-300 flex flex-col items-center text-center group">
+                    <div class="relative overflow-hidden rounded-xl border-2 border-brand-gold/40 mb-6 w-full max-w-xs aspect-[3/4] bg-black">
+                        <img src="1000250563.jpg" alt="Tan Malaka Muda / Jas" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://placehold.co/400x500/2a0808/D4AF37?text=Tan+Malaka+1925'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                        <span class="absolute bottom-3 left-3 bg-brand-darkRed/90 border border-brand-gold/50 text-brand-gold text-xs px-3 py-1 rounded-full font-cinzel">
+                            Era Muda & Awal Perjuangan
+                        </span>
+                    </div>
+                    <h3 class="font-cinzel text-xl font-bold text-brand-goldLight mb-2">Tan Malaka (Usia Muda)</h3>
+                    <p class="text-xs text-brand-gold/80 mb-3 uppercase tracking-widest font-semibold">Ibrahim Gelar Datuk Sutan Malaka</p>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Foto Tan Malaka dengan setelan jas rapi pada periode awal kiprah politiknya. Sosok pendidik, orator, dan pemikir revolusioner yang gigih menentang penindasan.
+                    </p>
+                </div>
+
+                <!-- Image Card 2 -->
+                <div class="bg-brand-cardDark rounded-2xl p-6 border border-brand-gold/30 shadow-2xl hover:border-brand-gold transition duration-300 flex flex-col items-center text-center group">
+                    <div class="relative overflow-hidden rounded-xl border-2 border-brand-gold/40 mb-6 w-full max-w-xs aspect-[3/4] bg-black">
+                        <img src="1000250565.jpg" alt="Tan Malaka Potret Sejarah" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://placehold.co/400x500/2a0808/D4AF37?text=Tan+Malaka+Portrait'">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                        <span class="absolute bottom-3 left-3 bg-brand-darkRed/90 border border-brand-gold/50 text-brand-gold text-xs px-3 py-1 rounded-full font-cinzel">
+                            Potret Ikonik Pahlawan
+                        </span>
+                    </div>
+                    <h3 class="font-cinzel text-xl font-bold text-brand-goldLight mb-2">Tan Malaka (Potret Perjuangan)</h3>
+                    <p class="text-xs text-brand-gold/80 mb-3 uppercase tracking-widest font-semibold">Bapak Republik Indonesia</p>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Potret klasik Tan Malaka yang penuh keteguhan. Meskipun hidup berkelana di berbagai negara di bawah ancaman intelijen internasional, pemikirannya terus menuntun bangsa.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Historical Timeline Section -->
+    <section id="timeline" class="py-20 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-brand-gold mb-3">
+                    <i class="fa-solid fa-clock-rotate-left mr-2 text-brand-crimson"></i> Garis Waktu Visi Kebangsaan
+                </h2>
+                <div class="w-24 h-1 bg-brand-gold mx-auto mb-4 rounded-full"></div>
+                <p class="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
+                    Evolusi gagasan Indonesia dari konsep pamflet Canton hingga terwujudnya Proklamasi Kemerdekaan.
+                </p>
+            </div>
+
+            <div class="relative border-l-2 border-brand-gold/40 ml-4 md:ml-32 space-y-12">
+                <!-- Timeline Item 1 -->
+                <div class="relative pl-8 md:pl-12 group">
+                    <div class="absolute -left-[17px] top-1 w-8 h-8 rounded-full bg-brand-darkRed border-2 border-brand-gold flex items-center justify-center text-brand-gold text-xs shadow-lg group-hover:scale-125 transition">
+                        <i class="fa-solid fa-feather"></i>
+                    </div>
+                    <div class="md:absolute md:-left-32 md:top-1 md:text-right md:w-24 text-brand-gold font-cinzel font-bold text-xl mb-2 md:mb-0">
+                        1925
+                    </div>
+                    <div class="bg-brand-cardDark p-6 rounded-xl border border-brand-gold/20 hover:border-brand-gold/60 transition">
+                        <h3 class="font-cinzel text-lg font-bold text-brand-goldLight mb-2">Penulisan Pamflet di Canton</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Tan Malaka menulis dan menerbitkan <em>Naar de 'Republiek Indonesia'</em> di Guangzhou, China. Dokumen ini menjadi karya pertama yang menggunakan kata **"Republiek Indonesia"** secara terstruktur sebagai sebuah negara modern berdaulat.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="relative pl-8 md:pl-12 group">
+                    <div class="absolute -left-[17px] top-1 w-8 h-8 rounded-full bg-brand-darkRed border-2 border-brand-gold flex items-center justify-center text-brand-gold text-xs shadow-lg group-hover:scale-125 transition">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div class="md:absolute md:-left-32 md:top-1 md:text-right md:w-24 text-brand-gold font-cinzel font-bold text-xl mb-2 md:mb-0">
+                        1928
+                    </div>
+                    <div class="bg-brand-cardDark p-6 rounded-xl border border-brand-gold/20 hover:border-brand-gold/60 transition">
+                        <h3 class="font-cinzel text-lg font-bold text-brand-goldLight mb-2">Kongres Pemuda & Sumpah Pemuda</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Tiga tahun setelah pencerahan dalam pamflet Tan Malaka, para pemuda Indonesia mengikrarkan persatuan tanah air, bangsa, dan bahasa Indonesia dalam Sumpah Pemuda 28 Oktober 1928.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="relative pl-8 md:pl-12 group">
+                    <div class="absolute -left-[17px] top-1 w-8 h-8 rounded-full bg-brand-darkRed border-2 border-brand-gold flex items-center justify-center text-brand-gold text-xs shadow-lg group-hover:scale-125 transition">
+                        <i class="fa-solid fa-flag"></i>
+                    </div>
+                    <div class="md:absolute md:-left-32 md:top-1 md:text-right md:w-24 text-brand-gold font-cinzel font-bold text-xl mb-2 md:mb-0">
+                        1945
+                    </div>
+                    <div class="bg-brand-cardDark p-6 rounded-xl border border-brand-gold/20 hover:border-brand-gold/60 transition">
+                        <h3 class="font-cinzel text-lg font-bold text-brand-goldLight mb-2">Proklamasi Kemerdekaan RI</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Visi "Republik Indonesia" yang digagas Tan Malaka 20 tahun sebelumnya akhirnya terwujud secara resmi melalui Proklamasi Kemerdekaan pada 17 Agustus 1945. Sukarno dan Hatta mengakui pengaruh besar pemikiran Tan Malaka.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Pamphlet Explorer -->
+    <section id="explorer" class="py-20 bg-brand-cardDark/40 border-y border-brand-gold/20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-brand-gold mb-3">
+                    <i class="fa-solid fa-compass-drafting mr-2 text-brand-crimson"></i> Penjelajah Gagasan & Kutipan
+                </h2>
+                <div class="w-24 h-1 bg-brand-gold mx-auto mb-4 rounded-full"></div>
+                <p class="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
+                    Klik tab di bawah untuk membedah pasal dan tuntutan utama Tan Malaka dalam 'Naar de Republiek Indonesia'.
+                </p>
+            </div>
+
+            <!-- Tab Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8">
+                <button onclick="switchTab('tab1')" id="btn-tab1" class="tab-btn px-5 py-2.5 rounded-lg border border-brand-gold/40 text-sm font-semibold transition bg-brand-crimson text-brand-goldLight">
+                    <i class="fa-solid fa-landmark mr-2"></i> Bentuk Negara
+                </button>
+                <button onclick="switchTab('tab2')" id="btn-tab2" class="tab-btn px-5 py-2.5 rounded-lg border border-brand-gold/40 text-sm font-semibold transition bg-brand-cardDark text-gray-400 hover:text-brand-gold">
+                    <i class="fa-solid fa-hand-fist mr-2"></i> Hak Politik & Gender
+                </button>
+                <button onclick="switchTab('tab3')" id="btn-tab3" class="tab-btn px-5 py-2.5 rounded-lg border border-brand-gold/40 text-sm font-semibold transition bg-brand-cardDark text-gray-400 hover:text-brand-gold">
+                    <i class="fa-solid fa-coins mr-2"></i> Ekonomis & Bank
+                </button>
+                <button onclick="switchTab('tab4')" id="btn-tab4" class="tab-btn px-5 py-2.5 rounded-lg border border-brand-gold/40 text-sm font-semibold transition bg-brand-cardDark text-gray-400 hover:text-brand-gold">
+                    <i class="fa-solid fa-graduation-cap mr-2"></i> Pendidikan & Buruh
+                </button>
+            </div>
+
+            <!-- Tab Content Cards -->
+            <div class="bg-brand-cardDark p-8 rounded-2xl border border-brand-gold/30 shadow-2xl relative min-h-[250px]">
+                <!-- Tab 1 -->
+                <div id="tab1" class="tab-content space-y-4">
+                    <h3 class="font-cinzel text-xl font-bold text-brand-gold flex items-center gap-2">
+                        <i class="fa-solid fa-gem text-brand-crimson"></i> Pengaturan Negara & Perwakilan Rakyat
+                    </h3>
+                    <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
+                        Tan Malaka menuntut pembubaran Volksraad (dewan buatan Belanda yang tidak representatif) dan mendesak pembentukan <strong>Majelis Permusyawaratan Nasional (National Assembly)</strong> yang dipilih langsung oleh seluruh rakyat Indonesia.
+                    </p>
+                    <blockquote class="p-4 rounded-lg bg-brand-darkRed/30 border-l-4 border-brand-gold text-brand-goldLight italic text-sm font-serif">
+                        "Indonesia tidak boleh kembali ke masa feodalisme kerajaan masa lalu, melainkan harus melangkah ke depan sebagai sebuah Republik modern yang sepenuhnya dimiliki oleh rakyatnya."
+                    </blockquote>
+                </div>
+
+                <!-- Tab 2 -->
+                <div id="tab2" class="tab-content hidden space-y-4">
+                    <h3 class="font-cinzel text-xl font-bold text-brand-gold flex items-center gap-2">
+                        <i class="fa-solid fa-scale-unbalanced-flip text-brand-crimson"></i> Hak Politik Mutlak & Kesetaraan Gender
+                    </h3>
+                    <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
+                        Secara sangat progresif untuk tahun 1925, Tan Malaka menegaskan bahwa **setiap laki-laki dan perempuan berusia 18 tahun ke atas** memiliki hak pilih penuh, hak berserikat, berkumpul, serta kebebasan pers tanpa intimidasi kolonial.
+                    </p>
+                    <blockquote class="p-4 rounded-lg bg-brand-darkRed/30 border-l-4 border-brand-gold text-brand-goldLight italic text-sm font-serif">
+                        "Kemerdekaan sejati tidak membeda-bedakan gender. Kaum wanita Indonesia berhak berdiri setara dalam menentukan arah masa depan Republik."
+                    </blockquote>
+                </div>
+
+                <!-- Tab 3 -->
+                <div id="tab3" class="tab-content hidden space-y-4">
+                    <h3 class="font-cinzel text-xl font-bold text-brand-gold flex items-center gap-2">
+                        <i class="fa-solid fa-vault text-brand-crimson"></i> Nasionalisasi Aset & Kedaulatan Ekonomi
+                    </h3>
+                    <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
+                        Ia menggariskan pentingnya mengembalikan kekayaan alam kepada rakyat melalui **nasionalisasi industri-industri kunci**, tambang, perkebunan besar, serta bank-bank asing monopoli Belanda untuk memutus rantai kemiskinan sistematis.
+                    </p>
+                    <blockquote class="p-4 rounded-lg bg-brand-darkRed/30 border-l-4 border-brand-gold text-brand-goldLight italic text-sm font-serif">
+                        "Selama tanah dan kekayaan alam dikuasai modal asing kolonial, rakyat proletar Indonesia akan tetap terjerat dalam kemiskinan abadi."
+                    </blockquote>
+                </div>
+
+                <!-- Tab 4 -->
+                <div id="tab4" class="tab-content hidden space-y-4">
+                    <h3 class="font-cinzel text-xl font-bold text-brand-gold flex items-center gap-2">
+                        <i class="fa-solid fa-book-reader text-brand-crimson"></i> Hak Buruh & Pendidikan Gratis
+                    </h3>
+                    <p class="text-gray-300 leading-relaxed text-sm sm:text-base">
+                        Pamflet ini menuntut perlindungan kerja 8 jam sehari, jaminan sosial bagi pekerja, penghapusan kerja paksa (rodi), serta penyediaan **pendidikan gratis dan wajib** bagi seluruh anak-anak Indonesia tanpa memandang kasta sosial.
+                    </p>
+                    <blockquote class="p-4 rounded-lg bg-brand-darkRed/30 border-l-4 border-brand-gold text-brand-goldLight italic text-sm font-serif">
+                        "Pendidikan adalah senjata terbaik untuk membebaskan rakyat dari ketakutan dan kebodohan yang dipelihara oleh penjajah."
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Knowledge Quiz Section -->
+    <section id="quiz" class="py-20 relative">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-brand-gold mb-3">
+                    <i class="fa-solid fa-brain mr-2 text-brand-crimson"></i> Uji Pengetahuan Sejarah
+                </h2>
+                <div class="w-24 h-1 bg-brand-gold mx-auto mb-4 rounded-full"></div>
+                <p class="text-gray-400 text-sm sm:text-base">
+                    Uji pemahaman Anda tentang karya monumental Tan Malaka ini.
+                </p>
+            </div>
+
+            <div id="quizContainer" class="bg-brand-cardDark p-8 rounded-2xl border border-brand-gold/30 shadow-2xl">
+                <div id="quizQuestion" class="font-cinzel text-lg font-bold text-brand-goldLight mb-6">
+                    <!-- Dynamic Question -->
+                </div>
+
+                <div id="quizOptions" class="space-y-3 mb-6">
+                    <!-- Dynamic Options -->
+                </div>
+
+                <div id="quizFeedback" class="hidden p-4 rounded-lg text-sm mb-6 font-medium"></div>
+
+                <div class="flex justify-between items-center pt-4 border-t border-brand-gold/20">
+                    <span id="quizProgress" class="text-xs text-brand-gold font-semibold">Soal 1 dari 3</span>
+                    <button id="nextBtn" onclick="nextQuestion()" class="hidden px-6 py-2 rounded-lg bg-brand-crimson border border-brand-gold text-brand-goldLight text-xs font-bold uppercase hover:bg-brand-darkRed transition">
+                        Lanjut <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black/90 border-t border-brand-gold/20 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+            <div class="font-cinzel text-xl font-bold text-brand-gold">
+                NAAR DE 'REPUBLIEK INDONESIA' (1925)
+            </div>
+            <p class="text-gray-400 text-sm max-w-xl mx-auto font-light">
+                Dibuat untuk mengenang karya dan pemikiran Pahlawan Nasional Tan Malaka dalam meretas jalan menuju kemerdekaan Republik Indonesia.
+            </p>
+            <div class="text-xs text-gray-500 pt-4 border-t border-gray-800">
+                &copy; 2026 Interactive Historical Archive • Tan Malaka Legacy
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Tab Switching Logic
+        function switchTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            
+            // Reset tab button styles
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-brand-crimson', 'text-brand-goldLight');
+                btn.classList.add('bg-brand-cardDark', 'text-gray-400');
+            });
+
+            // Show selected content & highlight active tab
+            document.getElementById(tabId).classList.remove('hidden');
+            const activeBtn = document.getElementById('btn-' + tabId);
+            activeBtn.classList.remove('bg-brand-cardDark', 'text-gray-400');
+            activeBtn.classList.add('bg-brand-crimson', 'text-brand-goldLight');
+        }
+
+        // Quiz System Data
+        const quizData = [
+            {
+                question: "1. Di kota manakah Tan Malaka menulis dan menerbitkan pamflet 'Naar de Republiek Indonesia' pada tahun 1925?",
+                options: ["Jakarta, Indonesia", "Canton (Guangzhou), China", "Leiden, Belanda", "Tokyo, Jepang"],
+                correct: 1,
+                explanation: "Tan Malaka menulis pamflet bersejarah ini saat berada di pelarian politik dan pengasingan di Canton (Guangzhou), China pada tahun 1925."
+            },
+            {
+                question: "2. Mengapa pamflet ini dianggap sebagai 'Cetakan Biru Pertama Republik Indonesia'?",
+                options: [
+                    "Karena ditulis oleh presiden pertama Indonesia",
+                    "Karena menjadi karya tertulis pertama yang merumuskan konsep Republik berdaulat secara sistematis sebelum 1928 & 1945",
+                    "Karena disetujui langsung oleh pemerintah kolonial Belanda",
+                    "Karena dibacakan saat Deklarasi Sumpah Pemuda"
+                ],
+                correct: 1,
+                explanation: "Pamflet ini secara eksplisit mengonsepkan negara 'Republiek Indonesia' berdaulat jauh sebelum Sumpah Pemuda (1928) maupun Proklamasi (1945)."
+            },
+            {
+                question: "3. Apa usulan lembaga perwakilan rakyat yang digagas Tan Malaka dalam pamflet tersebut?",
+                options: [
+                    "Volksraad Kolonial",
+                    "Majelis Permusyawaratan Nasional",
+                    "Dewan Kerajaan Nusantara",
+                    "Komite Uni Eropa"
+                ],
+                correct: 1,
+                explanation: "Tan Malaka menuntut pembentukan 'Majelis Permusyawaratan Nasional' yang dipilih langsung oleh rakyat sebagai pengganti Volksraad buatan penjajah."
+            }
+        ];
+
+        let currentQuizIndex = 0;
+        let selectedOption = null;
+
+        function loadQuiz() {
+            const current = quizData[currentQuizIndex];
+            document.getElementById('quizQuestion').innerText = current.question;
+            document.getElementById('quizProgress').innerText = `Soal ${currentQuizIndex + 1} dari ${quizData.length}`;
+            
+            const optionsContainer = document.getElementById('quizOptions');
+            optionsContainer.innerHTML = '';
+
+            current.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-4 rounded-xl bg-brand-charcoal border border-brand-gold/20 hover:border-brand-gold text-gray-200 text-sm transition flex items-center justify-between group";
+                btn.innerHTML = `<span>${opt}</span> <i class="fa-regular fa-circle text-brand-gold/40 group-hover:text-brand-gold"></i>`;
+                btn.onclick = () => checkAnswer(idx, btn);
+                optionsContainer.appendChild(btn);
+            });
+
+            document.getElementById('quizFeedback').classList.add('hidden');
+            document.getElementById('nextBtn').classList.add('hidden');
+        }
+
+        function checkAnswer(selectedIndex, btnElement) {
+            const current = quizData[currentQuizIndex];
+            const feedback = document.getElementById('quizFeedback');
+            const allOptionBtns = document.getElementById('quizOptions').children;
+
+            // Disable all buttons after selection
+            for (let btn of allOptionBtns) {
+                btn.disabled = true;
+                btn.classList.add('opacity-70');
+            }
+
+            if (selectedIndex === current.correct) {
+                btnElement.classList.remove('bg-brand-charcoal', 'border-brand-gold/20');
+                btnElement.classList.add('bg-emerald-950', 'border-emerald-500', 'text-emerald-200');
+                feedback.className = "p-4 rounded-lg text-sm mb-6 font-medium bg-emerald-900/40 border border-emerald-500/50 text-emerald-300";
+                feedback.innerHTML = `<i class="fa-solid fa-circle-check mr-2"></i> <strong>Benar!</strong> ${current.explanation}`;
+            } else {
+                btnElement.classList.remove('bg-brand-charcoal', 'border-brand-gold/20');
+                btnElement.classList.add('bg-rose-950', 'border-rose-500', 'text-rose-200');
+                feedback.className = "p-4 rounded-lg text-sm mb-6 font-medium bg-rose-900/40 border border-rose-500/50 text-rose-300";
+                feedback.innerHTML = `<i class="fa-solid fa-circle-xmark mr-2"></i> <strong>Kurang Tepat.</strong> ${current.explanation}`;
+            }
+
+            feedback.classList.remove('hidden');
+            document.getElementById('nextBtn').classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            currentQuizIndex++;
+            if (currentQuizIndex < quizData.length) {
+                loadQuiz();
+            } else {
+                // Quiz Finish State
+                document.getElementById('quizContainer').innerHTML = `
+                    <div class="text-center py-8 space-y-4">
+                        <div class="w-16 h-16 rounded-full bg-brand-darkRed border-2 border-brand-gold text-brand-gold text-2xl mx-auto flex items-center justify-center">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                        <h3 class="font-cinzel text-2xl font-bold text-brand-goldLight">Kuis Selesai!</h3>
+                        <p class="text-gray-300 text-sm max-w-md mx-auto">
+                            Terima kasih telah mempelajari sejarah cetakan biru Republik Indonesia karya Tan Malaka.
+                        </p>
+                        <button onclick="restartQuiz()" class="px-6 py-2.5 rounded-lg bg-brand-crimson border border-brand-gold text-brand-goldLight font-semibold text-xs uppercase hover:bg-brand-darkRed transition">
+                            <i class="fa-solid fa-rotate-right mr-1"></i> Ulangi Kuis
+                        </button>
+                    </div>
+                `;
+            }
+        }
+
+        function restartQuiz() {
+            currentQuizIndex = 0;
+            // Restore quiz container UI
+            document.getElementById('quizContainer').innerHTML = `
+                <div id="quizQuestion" class="font-cinzel text-lg font-bold text-brand-goldLight mb-6"></div>
+                <div id="quizOptions" class="space-y-3 mb-6"></div>
+                <div id="quizFeedback" class="hidden p-4 rounded-lg text-sm mb-6 font-medium"></div>
+                <div class="flex justify-between items-center pt-4 border-t border-brand-gold/20">
+                    <span id="quizProgress" class="text-xs text-brand-gold font-semibold"></span>
+                    <button id="nextBtn" onclick="nextQuestion()" class="hidden px-6 py-2 rounded-lg bg-brand-crimson border border-brand-gold text-brand-goldLight text-xs font-bold uppercase hover:bg-brand-darkRed transition">
+                        Lanjut <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+            `;
+            loadQuiz();
+        }
+
+        // Initialize Quiz on page load
+        window.onload = function() {
+            loadQuiz();
+        };
+    </script>
+</body>
+</html>
